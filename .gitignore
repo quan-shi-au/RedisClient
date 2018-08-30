@@ -1,0 +1,6 @@
+.vs/
+bin/Debug/netcoreapp2.0/RedisClient.deps.json
+bin/
+obj/
+RedisClient.csproj.user
+Properties/PublishProfiles/FolderProfile.pubxml.user
