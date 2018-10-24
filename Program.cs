@@ -9,22 +9,36 @@ namespace RedisTesting
 {
     class Program
     {
+        /*
+         *   - Need to be published
+         *   - Can't run in local environment but an EC2 inside VPC
+         *  
+         */
 
         static void Main(string[] args)
 
         {
 
-            string host = "";
+            try
+            {
+                string host = "wontokone-ga.bnadfg.ng.0001.apse2.cache.amazonaws.com:6379";
 
-            string key = "IDG";
+                string key = "IDG";
 
-            // Store data in the cache
+                // Store data in the cache
+                Console.WriteLine($"Save into cache host...: {host}");
 
-            bool success = Save(host, key, "Hello World!");
+                bool success = Save(host, key, "Hello World!");
 
-            // Retrieve data from the cache using the key
+                // Retrieve data from the cache using the key
 
-            Console.WriteLine("Data retrieved from Redis Cache: " + Get(host, key));
+                Console.WriteLine("Success: Data retrieved from Redis Cache: " + Get(host, key));
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception: {e}");
+            }
 
             Console.Read();
 
